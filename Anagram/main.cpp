@@ -1,25 +1,8 @@
 #include<iostream>
-#include<algorithm> 
-#include <cctype>   
+#include<algorithm>    
 #include<string>
+#include"tolower.h"
 using namespace std;
-bool isAnagram(string str1,string str2)
-{
-    if(str1.length()!=str2.length())
-    {
-        return false;
-    }
-    sort(str1.begin(),str1.end());
-    sort(str2.begin(),str2.end());
-    if(str1==str2)
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-}
 int main()
 {
     string str1,str2;
@@ -27,14 +10,13 @@ int main()
     cin>>str1;
     for(char &c:str1)
     {
-        c=tolower(c);    
+        c=tolower1(c);    
     }
-    // cout<<str1;
     cout<<"Enter second word: ";
     cin>>str2;
     for(char &c:str2)
     {
-        c=towlower(c);
+        c=tolower1(c);
     }
     if(isAnagram(str1,str2))
     {
