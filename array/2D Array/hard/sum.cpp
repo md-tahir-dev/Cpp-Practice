@@ -1,17 +1,48 @@
 #include<iostream>
 using namespace std;
-void printARR(int arr[5][5],int N)
+void inputARR(int r, int c, int arr[100][100])
 {
-    for(int i = 0; i<N;i++)
+    for (int i = 0; i < r; i++)
+    {   
+        for(int j=0;j<c;j++)
+        {
+            cin>>arr[i][j];
+            if(cin.fail())
+            {
+                cin.clear();
+                cin.ignore(100,'\n');
+                cout << "Kindly enter number: ";
+                cin >> arr[i][j];
+            }
+        }
+    }
+} 
+int count(int arr[100][100])
+{
+    int count=0;
+    for (int i = 0; i < 100; i++)
     {
-        for (int j = 0; j < N; j++)
+        if(arr[i][0]==0)
+        {
+            break;
+        }
+        count++;
+    }
+    return count;
+    
+}
+void printARR(int arr[100][100],int r,int c)
+{
+    for(int i = 0; i<r;i++)
+    {
+        for (int j = 0; j <c; j++)
         {
             cout<<arr[i][j]<<" ";
         }
         cout<<endl;
     }
 }
-int sum(int arr[5][5],int N, int target)
+int sum(int arr[100][100],int N, int target)
 {
     int r=(target-1)/N;
     int c=(target-1)%N;
@@ -22,67 +53,44 @@ int sum(int arr[5][5],int N, int target)
         sum = sum+ arr[i][j];
          i++,j++;
     }
-    
-    // for (int i = r,j=c; i < N&&j<N; i++,j++)
-    // {
-    //     sum = sum+ arr[i][j];
-    // }
-    cout<<"sum of first: "<<sum<<endl;
     i=r-1,j=c-1;
     while (i>=0&&j>=0)
     {
         sum= sum + arr[i][j];
         i--,j--;
     }
-    
-    // for(int i=r-1,j=c-1;i>=0,j>=0;i--,j--)
-    // {
-    //     sum= sum + arr[i][j];
-      
-    // }
-    cout<<"sum of second: "<<sum<<endl;
     i=r+1,j=c-1;
     while (i<N&&j>=0)
     {
         sum= sum+arr[i][j];
         i++,j--;
     }
-    
-    // for(int i=r+1,j=c-1; i<N,j>=0;i++,j--)
-    // {
-    //     sum= sum+arr[i][j];
-    // }
-    cout<<"sum of third: "<<sum<<endl;
     i=r-1,j=c+1;
     while (i>=0&&j<N)
     {
         sum = sum + arr[i][j];
         i--,j++;
     }
-    
-    // for(int i=r-1,j=c+1;i>=0,j<N;i--,j++)
-    // {
-    //     sum = sum + arr[i][j];
-    // }
-    cout<<"sum of four: "<<sum<<endl;
     return sum; 
-    
 }
 int main()
 {   
-    int N=5;
+    int N;
     int target;
-    int arr[5][5]={
-        1, 2, 3, 4, 5,
-        6, 7, 8, 9,10,
-        11,12,13,14,15,
-        16,17,18,19,20,
-        21,22,23,24,25
-    };
-    printARR(arr,N);
+    int r,c;
+    cout<<"Enter total number of rows: ";
+    cin>>r;
+    cout<<"Enter total number of Columns: ";
+    cin>>c;
+    int arr[100][100];
+    cout<<"Enter elements:-"<<endl;
+    inputARR(r,c,arr);
+    N=count(arr);
+    cout<<"Your entered elements:-"<<endl;
+    printARR(arr,r,c);
     cout<<"Enter target: ";
     cin>>target;
-    cout<<sum(arr,N,target);
+    cout<<"Sum is "<<sum(arr,N,target);
 }
 
 
