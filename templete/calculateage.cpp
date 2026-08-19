@@ -80,6 +80,7 @@ void calculateageindays(int brithdate,int brithyear, int integerbrithmonth)
     int counthour = countday*24;
     int countmins= counthour*60;
     int countseconds = countmins*60;
+    // month
     cout<<"Year: "<<countyears<<" Months: "<<countmonths<<" Days: "<<countdays<<endl;
     cout<<"Your Total Months: "<<countmonth<<endl;
     cout<<"Your Total weeks: "<<countweeks<<endl;
