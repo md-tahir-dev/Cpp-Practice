@@ -89,6 +89,7 @@ void calculateageindays(size_t brithdate,size_t brithyear, int integerbrithmonth
     cout<<"Your Total mins: "<<countmins<<endl;
     cout<<"Your Total seconds: "<<countseconds<<endl;
 }
+//C++
 int main()
 {
     size_t brithdate,brithyear;
