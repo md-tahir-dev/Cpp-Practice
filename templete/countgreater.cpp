@@ -2,7 +2,7 @@
 
 using namespace std;
 template <typename T>
-size_t countGreater(T* arr, size_t size, T &target)
+size_t countGreater(T arr[], size_t size, T &target)
 {
     int count=0;
     for (size_t i = 0; i < size; i++)
