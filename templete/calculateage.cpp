@@ -58,29 +58,36 @@ int brithmonthinnumber(string brithmonth)
 }
 void calculateageindays(size_t brithdate,size_t brithyear, int integerbrithmonth)
 {
-    size_t cuuerentyear = 2026;
-    size_t currentmonth = 8;
-    size_t currentdate = 20;
-    size_t countyears = cuuerentyear-brithyear;
-    size_t countmonths = currentmonth-integerbrithmonth;
-    if(countmonths<0)
-    {
-        countmonths+= 12;
-        countyears--;
-    }
-    size_t countdays = currentdate-brithdate;
+    int cuuerentyear = 2026;
+    int currentmonth = 8;
+    int currentdate = 20;
+
+    long countyears = cuuerentyear-brithyear;
+    long countmonths = currentmonth-integerbrithmonth;
+    long countdays = currentdate-brithdate;
+
+
+    cout<<"Current month is: "<<countmonths<<endl;
+
     if(countdays<0)
     {
         countdays+=30;
         countmonths--;
     }
-    size_t countmonth=(countyears*12)+countmonths;
-    size_t countday=(countyears*365)+(countmonths*30)+countdays;
-    size_t countweeks= countday/7;
-    size_t counthour = countday*24;
-    size_t countmins= counthour*60;
-    size_t countseconds = countmins*60;
-    // month
+
+    if(countmonths<0)
+    {
+        countmonths+= 12;
+        countyears--;
+    }
+
+    long countmonth=(countyears*12)+countmonths;
+    long countday=(countyears*365)+(countmonths*30)+countdays;
+    long countweeks= countday/7;
+    long counthour = countday*24;
+    long countmins= counthour*60;
+    long countseconds = countmins*60;
+
     cout<<"Year: "<<countyears<<" Months: "<<countmonths<<" Days: "<<countdays<<endl;
     cout<<"Your Total Months: "<<countmonth<<endl;
     cout<<"Your Total weeks: "<<countweeks<<endl;
