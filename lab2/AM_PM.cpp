@@ -2,12 +2,6 @@
 #include<string>
 using namespace std;
 
-string to12(size_t hour24) {
-    string period = (hour24 < 12 ? "AM" : "PM");
-    size_t hour12 = hour24 % 12;
-    if (hour12 == 0) hour12 = 12;
-    return to_string(hour12) + " " + period;
-}
 
 void calculatetime(size_t currhour,size_t currmin,size_t currsec, size_t addhour, size_t addmin, size_t addsec)
 {
@@ -22,9 +16,22 @@ void calculatetime(size_t currhour,size_t currmin,size_t currsec, size_t addhour
     size_t total_hour = currhour + addhour + carry_hour;
     size_t final_hour = total_hour % 24;
 
-    cout << "Current time : "<< to12(currhour) << " : " << currmin << " : " << currsec << endl;
-
-    cout << "Your time after add : "<< to12(final_hour) << " : "<< final_min << " : "<< final_sec << endl;
+    if (currhour == 0)
+    {
+        cout << 12 << " : " << currmin << " : " << currsec << " AM";
+    }
+    else if (currhour < 12)
+    {
+        cout << currhour << " : " << currmin << " : " << currsec << " AM";
+    }
+    else if (currhour == 12)
+    {
+        cout << 12 << " : " << currmin << " : " << currsec << " PM";
+    }
+    else
+    {
+        cout << currhour - 12 << " : " << currmin << " : " << currsec << " PM";
+    }
 }
 
 int main()
