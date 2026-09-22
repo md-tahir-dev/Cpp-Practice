@@ -3,22 +3,35 @@
 //  largest number is 4
 #include <iostream>
 #include <vector>
+#include <algorithm>
 using namespace std;
 vector<int> Coutiunous(int arr[], int size)
 {
-    vector<int> result;
+    sort(arr, arr + size);
+    vector<int> currseq;
+    vector<int> bestseq;
+    currseq.push_back(arr[0]);
     for (int i = 1; i < size; i++)
     {
         if (arr[i] == arr[i - 1] + 1)
         {
-            if (result.empty())
+            currseq.push_back(arr[i]);
+        }
+        else
+        {
+            if (currseq.size() > bestseq.size())
             {
-                result.push_back(arr[i - 1]);
+                bestseq = currseq;
             }
-            result.push_back(arr[i]);
+            currseq.clear();
+            currseq.push_back(arr[i]);
         }
     }
-    return result;
+    if (currseq.size() > bestseq.size())
+    {
+        bestseq = currseq;
+    }
+    return bestseq;
 }
 void largest(vector<int> large, int size)
 {
@@ -34,10 +47,11 @@ void largest(vector<int> large, int size)
 }
 int main()
 {
-    int arr[] = {1, 5, 70, 90, 2, 3, 4, 8};
+    int arr[] = {100, 4, 200, 1, 3, 2, 5, 6};
+    // int arr[] = {1, 5, 70, 90, 2, 3, 4, 8};
     int size = sizeof(arr) / sizeof(arr[0]);
     vector<int> conARR = Coutiunous(arr, size);
-    int size2 = sizeof(conARR) / sizeof(conARR[0]);
+    int size2 = conARR.size();
     cout << "Contiunous Array is: ";
     for (int num : conARR)
     {
