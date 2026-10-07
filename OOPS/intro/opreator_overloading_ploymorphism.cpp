@@ -8,13 +8,13 @@ class B{
             return a+b;
         }
         void operator+(B &obj){
-            // int value1=this->a;
-            // int value2=obj.a;
-            // cout<<"Output: "<<value2-value1<<endl;
+            int value1=this->a;
+            int value2=obj.a;
+            cout<<"Output: "<<value2-value1<<endl;
             cout<<"Hello"<<endl;
         }
         void operator()(){
-            cout<<"Hello from bracket"<<this->a<<endl;
+            cout<<"Hello from bracket "<<this->a<<endl;
         }
 };
 int main()
