@@ -1,0 +1,5 @@
+C++ Basics|Bjarne Stroustrup|0
+Data Structures|Mark Weiss|0
+Algorithms|Thomas Cormen|0
+Clean Code|Robert C. Martin|0
+Design Patterns|Erich Gamma|0

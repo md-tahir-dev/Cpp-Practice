@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-void deallocation(int *&p)
+void deallocate_int_ptr(int *& p)
 {
     delete p;
     p = nullptr;
@@ -10,7 +10,7 @@ int main()
     int *ptr = new int;
     *ptr = 40;
     cout << *ptr << endl;
-    deallocation(ptr);
+    deallocate_int_ptr(ptr);
     if (ptr == nullptr)
     {
         cout << "ptr is NULL\n";
