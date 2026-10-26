@@ -1119,7 +1119,7 @@ int main()
                                           comp->getID() + "): ", pick) &&
                             pick == 2)
                         {
-                            
+
                             session = comp;
                             asCompany = true;
                         }
