@@ -1,0 +1,7 @@
+Vehicle ID: 1
+Brand: Honda
+Model: 2024
+Rent per day: 10000
+Available: true
+Number of seats: 4
+

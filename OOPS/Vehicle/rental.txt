@@ -1,0 +1,7 @@
+Rental ID: 1
+Customer ID: 1
+Vehicle ID: 1
+Duration in days: 5
+Rent per day: 10000
+Total rent: 50000
+

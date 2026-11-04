@@ -1,0 +1,12 @@
+Customer ID: 1
+Name: Muhammad
+CNIC: 3520201588945
+Phone: 03001234567
+Address: 194-A Sabzazar
+
+Customer ID: 1
+Name: Muhammad
+CNIC: 3520201588945
+Phone: 03001234567
+Address: 194-A Sabzazar
+
